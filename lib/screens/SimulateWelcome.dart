@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simules/screens/Simulate.dart';
 
 class SimulateWelcome extends StatelessWidget {
   @override
@@ -10,7 +11,12 @@ class SimulateWelcome extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
             tooltip: 'Iniciar simulado',
             child: Icon(Icons.play_arrow),
-            onPressed: null
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) => Simulate()
+              ));
+            }
         ),
         body: ListView(
           padding: EdgeInsets.fromLTRB(10.0, 20.0, 10.0, 20.0),
